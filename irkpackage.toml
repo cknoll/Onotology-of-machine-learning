@@ -1,0 +1,5 @@
+[irkpackage]
+uri = "irk:/oml_work/1.0"
+title = "OML"
+version = "1.0"
+description = "A machine learning knowledge graph with items and relations."
