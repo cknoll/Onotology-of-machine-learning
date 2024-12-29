@@ -8,9 +8,4 @@ The idea is that for every git-commit which contains such a change, there is som
 
 ## Reasons
 
-- the tests should be executable both by
-    - `pytest`
-        - I prefer and recommend this for manual testing (due to nicer output)
-    - `python -m unittest`
-        - this is used for the CI job (to avoid an unnecessary dependency and it seems to be faster)
-        - Note: the `unittest` package is part of Python standard-library while `pytest` is not.
+As far as I know it is a usual convention to have a newline as last character in every source file. Thus, all my editors are configured to add a trailing newline if it is missing. Also my editors are configured to remove pointless trailing spaces.
