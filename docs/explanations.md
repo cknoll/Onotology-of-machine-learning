@@ -8,4 +8,4 @@ The idea is that for every git-commit which contains such a change, there is som
 
 ## Reasons
 
-IRK-packages are not intended to be installed like ordinary python packages. Thus I implemented an own loading mechanism. This commit switches from ordinary python import to this loading mechanism. This also makes the `__init__.py` file obsolete.
+My current specification of an irk-package is that it must contain a requirements.txt (which can be empty).
