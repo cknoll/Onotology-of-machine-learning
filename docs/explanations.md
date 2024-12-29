@@ -8,4 +8,4 @@ The idea is that for every git-commit which contains such a change, there is som
 
 ## Reasons
 
-As far as I know it is a usual convention to have a newline as last character in every source file. Thus, all my editors are configured to add a trailing newline if it is missing. Also my editors are configured to remove pointless trailing spaces.
+IRK-packages are not intended to be installed like ordinary python packages. Thus I implemented an own loading mechanism. This commit switches from ordinary python import to this loading mechanism. This also makes the `__init__.py` file obsolete.
