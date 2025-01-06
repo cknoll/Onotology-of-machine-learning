@@ -68,8 +68,7 @@ I1007 = p.create_item(
     "I1007",
     R1__has_label="Clustering",
     R2__has_description=(
-        "An unsupervised learning task that involves grouping similar data points "
-        "based on their features."
+        "An unsupervised learning task that involves grouping similar data points " "based on their features."
     ),
 )
 
@@ -177,9 +176,8 @@ I1021 = p.create_item(
         "A layer of neurons between the input and output layers in a neural network, "
         "enabling more complex representations."
     ),
-
     # TODO: improve this
-    R4__is_instance_of=p.I2["Metaclass"]
+    R4__is_instance_of=p.I2["Metaclass"],
 )
 
 I1022 = p.create_item(
@@ -189,9 +187,8 @@ I1022 = p.create_item(
         "A non-linear function applied at each neuron to introduce non-linearity, "
         "enabling the network to learn complex patterns."
     ),
-
     # TODO: improve this
-    R4__is_instance_of=p.I2["Metaclass"]
+    R4__is_instance_of=p.I2["Metaclass"],
 )
 
 I1023 = p.create_item(
@@ -261,17 +258,14 @@ I1029 = p.create_item(
 I1030 = p.create_item(
     "I1030",
     R1__has_label="F1-Score",
-    R2__has_description=(
-        "The harmonic mean of precision and recall, useful for imbalanced classification."
-    ),
+    R2__has_description=("The harmonic mean of precision and recall, useful for imbalanced classification."),
 )
 
 I1031 = p.create_item(
     "I1031",
     R1__has_label="Precision",
     R2__has_description=(
-        "A classification metric measuring the ratio of true positives to all "
-        "predicted positives."
+        "A classification metric measuring the ratio of true positives to all " "predicted positives."
     ),
 )
 
@@ -279,8 +273,7 @@ I1032 = p.create_item(
     "I1032",
     R1__has_label="Recall",
     R2__has_description=(
-        "A classification metric measuring the ratio of true positives to all "
-        "actual positives."
+        "A classification metric measuring the ratio of true positives to all " "actual positives."
     ),
 )
 
@@ -359,16 +352,18 @@ I1033.set_relation(p.R4["is instance of"], I1028["Evaluation Metric"])
 I1034.set_relation(p.R5["is part of"], I1001["Machine Learning"])
 
 
-
 # The following code demonstrates how to model statements (which are too complex for simple triples)
 
 I2001 = p.create_item(
     R1__has_label="statement about CNNs",
-    R2__has_description="In a typical CNN the number of kernels often increases from one layer to the next layer.",
+    R2__has_description=(
+        "In a typical CNN the number of kernels often increases from one layer to the next layer."
+    ),
     R4__is_instance_of=p.I59["basic statement"],
 )
 
-# The specification of scopes is possible because I2001 is an instance (R4) of a class which supports scope creation
+# The specification of scopes is possible because I2001 is an instance (R4) of I59["basic statement"]
+# – a class which supports scope creation
 with I2001["statement about CNNs"].scope("setting") as cm:
     cnn = cm.new_var(cnn=p.instance_of(I1024["Convolutional Neural Network (CNN)"]))
     l1 = cm.new_var(l1=p.instance_of(I1021["Hidden Layer"]))
@@ -399,10 +394,13 @@ with I2001["statement about CNNs"].scope("assertion") as cm:
     # TODO: it must be expressed that this holds "often" for a "typical" CNN
 
 
-
-# Demo visualization (depth = 1)
+# Demo visualization (depth = 1); should be moved out of the module
 # with open("machine_learning.svg", "w") as f:
 #     f.write(p.visualize_entity(I1001.uri))
+
+# TODO: there should be simple way to visualize the ego-graph of an item with a
+# specifiable radius (number of levels)
+# -> should be implemented in pyirk-core
 
 p.end_mod()
 # pyirk --load-mod oml.py demo -vis __all__
