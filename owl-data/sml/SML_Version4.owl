@@ -1,0 +1,808 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#"
+     xml:base="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#BelongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#BelongsTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Feature"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Topic"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasTopicFeature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Contains">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#DataItem"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#MetaData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#DSHasMetaData -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#DSHasMetaData">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#DataSet"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#MetaData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Describes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Describes">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#ApplicationDomain"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Topic"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#isDescribedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#ReliesOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#ReliesOn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#DataSet"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Feature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasAlgorithm -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasAlgorithm">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Algorithm"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#MachineLearningModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasAlgorithmMetaData -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasAlgorithmMetaData">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Algorithm"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#MetaData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasApplicationDomain -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasApplicationDomain">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#ApplicationDomain"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#MachineLearningModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasCategory -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasCategory">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Category"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Metric"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasConstraint -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasConstraint">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Constraint"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Context"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasContext -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasContext">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Context"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#DataSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasData -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasData">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#UserData"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#UserInput"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasEvaluation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasEvaluation">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Evaluation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#TestingDataSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasEvaluationMetaData -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasEvaluationMetaData">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Evaluation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#MetaData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasFeature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasFeature">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Feature"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#MetaData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasMetaData -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasMetaData">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#MachineLearningModel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#MetaData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasMostSpecificCategory -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasMostSpecificCategory">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Algorithm"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Category"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasOperator -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasOperator">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Constraint"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Operator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasScore -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasScore">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Evaluation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Score"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasSourceOperand -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasSourceOperand">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Constraint"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Feature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasTargetOperand -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasTargetOperand">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Constraint"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Value"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasTestingDataSet -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasTestingDataSet">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#MachineLearningModel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#TestingDataSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasTopicFeature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasTopicFeature">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Feature"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Topic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasTrainingDataSet -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasTrainingDataSet">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#MachineLearningModel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#TrainingDataSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasUpperCategory -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasUpperCategory">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Category"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Category"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasValue -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#MetaData"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Value"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasValueType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasValueType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Value"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#ValueType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#isCalculatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#isCalculatedBy">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Metric"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Score"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#isCompliantWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#isCompliantWith">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Algorithm"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#MachineLearningModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#isComposedOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#isComposedOf">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#DataItem"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#DataSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#isDescribedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#isDescribedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#ApplicationDomain"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Topic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#isSplitInto -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#isSplitInto">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#DataSet"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#TestingDataSet"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#TrainingDataSet"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#UserData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#AlgorithmName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#AlgorithmName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Algorithm"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#bestValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#bestValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Metric"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#categoryName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#categoryName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Category"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#dataitemValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#dataitemValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#DataItem"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#domainName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#domainName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#ApplicationDomain"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#featureID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#featureID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Feature"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#featureName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#featureName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Feature"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#mlmID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#mlmID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#MachineLearningModel"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#operatorValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#operatorValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Operator"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#scoreValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#scoreValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Score"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#valueType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#valueType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#ValueType"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#valueVal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#valueVal">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Value"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Algorithm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Algorithm">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasMostSpecificCategory"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Category"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasAlgorithmMetaData"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#MetaData"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#ApplicationDomain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#ApplicationDomain"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Category -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Category">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasUpperCategory"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Category"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Constraint -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Constraint">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasSourceOperand"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Feature"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasOperator"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Operator"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasTargetOperand"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Value"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Context -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Context">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasConstraint"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Constraint"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#DataItem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#DataItem">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Contains"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#MetaData"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#DataSet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#DataSet">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#ReliesOn"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Feature"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#isComposedOf"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#DataItem"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#isSplitInto"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#TestingDataSet"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#isSplitInto"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#TrainingDataSet"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasContext"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Context"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#DSHasMetaData"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#MetaData"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Evaluation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Evaluation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasEvaluationMetaData"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#MetaData"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasScore"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Score"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Feature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Feature">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#BelongsTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Topic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#MachineLearningModel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#MachineLearningModel">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#isCompliantWith"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Algorithm"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasAlgorithm"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Algorithm"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasMetaData"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#MetaData"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasTrainingDataSet"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#TrainingDataSet"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasTestingDataSet"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#TestingDataSet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasApplicationDomain"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#ApplicationDomain"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#MetaData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#MetaData">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasFeature"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Feature"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasValue"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Value"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Metric -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Metric">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasCategory"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Category"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Operator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Operator"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Score -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Score">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#isCalculatedBy"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Metric"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#TestingDataSet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#TestingDataSet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#DataSet"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasEvaluation"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Evaluation"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Topic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Topic">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Describes"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#ApplicationDomain"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#TrainingDataSet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#TrainingDataSet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#DataSet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#UserData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#UserData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#DataSet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#UserInput -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#UserInput">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasData"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#UserData"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Value -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#Value">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#hasValueType"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#ValueType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#ValueType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lka20192/ontologies/2022/10/untitled-ontology-5#ValueType"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
