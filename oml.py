@@ -177,6 +177,9 @@ I1021 = p.create_item(
         "A layer of neurons between the input and output layers in a neural network, "
         "enabling more complex representations."
     ),
+
+    # TODO: improve this
+    R4__is_instance_of=p.I2["Metaclass"]
 )
 
 I1022 = p.create_item(
@@ -186,6 +189,9 @@ I1022 = p.create_item(
         "A non-linear function applied at each neuron to introduce non-linearity, "
         "enabling the network to learn complex patterns."
     ),
+
+    # TODO: improve this
+    R4__is_instance_of=p.I2["Metaclass"]
 )
 
 I1023 = p.create_item(
@@ -353,9 +359,50 @@ I1033.set_relation(p.R4["is instance of"], I1028["Evaluation Metric"])
 I1034.set_relation(p.R5["is part of"], I1001["Machine Learning"])
 
 
-# To be used for depth = 1 visualisation
-with open("machine_learning.svg", "w") as f:
-    f.write(p.visualize_entity(I1001.uri))
+
+# The following code demonstrates how to model statements (which are too complex for simple triples)
+
+I2001 = p.create_item(
+    R1__has_label="statement about CNNs",
+    R2__has_description="In a typical CNN the number of kernels often increases from one layer to the next layer.",
+    R4__is_instance_of=p.I59["basic statement"],
+)
+
+# The specification of scopes is possible because I2001 is an instance (R4) of a class which supports scope creation
+with I2001["statement about CNNs"].scope("setting") as cm:
+    cnn = cm.new_var(cnn=p.instance_of(I1024["Convolutional Neural Network (CNN)"]))
+    l1 = cm.new_var(l1=p.instance_of(I1021["Hidden Layer"]))
+    l2 = cm.new_var(l2=p.instance_of(I1021["Hidden Layer"]))
+
+    cm.new_rel(l1, p.R5["is part of"], cnn)
+    cm.new_rel(l2, p.R5["is part of"], cnn)
+
+    i1 = cm.new_var(i1=p.instance_of(p.I38["non-negative integer"]))
+    i2 = cm.new_var(i2=p.instance_of(p.I38["non-negative integer"]))
+
+    cm.new_rel(l1, p.R40["has index"], i1)
+    cm.new_rel(l2, p.R40["has index"], i2)
+
+    cm.new_math_relation(i1, ">", i2)
+
+    n1 = cm.new_var(n1=p.instance_of(p.I39["positive integer"]))
+    n2 = cm.new_var(n2=p.instance_of(p.I39["positive integer"]))
+
+    # use dummy relation here for convenience
+    cm.new_rel(l1, p.R000["has number of kernels"], n1)
+    cm.new_rel(l2, p.R000["has number of kernels"], n2)
+
+# after all that preparation finally we make our point
+with I2001["statement about CNNs"].scope("assertion") as cm:
+    cm.new_math_relation(n2, ">", n1)
+
+    # TODO: it must be expressed that this holds "often" for a "typical" CNN
+
+
+
+# Demo visualization (depth = 1)
+# with open("machine_learning.svg", "w") as f:
+#     f.write(p.visualize_entity(I1001.uri))
 
 p.end_mod()
 # pyirk --load-mod oml.py demo -vis __all__
