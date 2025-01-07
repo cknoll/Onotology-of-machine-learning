@@ -1,5 +1,5 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-![ci](https://github.com/ackrep-org/oml/actions/workflows/python-app.yml/badge.svg)
+![ci](https://github.com/cknoll/Onotology-of-machine-learning/actions/workflows/python-app.yml/badge.svg)
 
 # Ontology of Machine Learning
 
