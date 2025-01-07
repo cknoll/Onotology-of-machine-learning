@@ -38,13 +38,13 @@ jobs:
         python -m pip install --upgrade pip
 
 
-# TODO: we use the `ut__ocse__main` branch of pyirk for now. In the future there should be a more generic branch.
+# Note: we use the `ut__ci__main` branch of pyirk.
 # We could use `main` but this ontology might depend on new pyirk features which are not yet available in `main`.
     - name: Install pyirk
       run: |
         git clone https://github.com/ackrep-org/pyirk-core.git
         cd pyirk-core
-        git checkout ut__ocse__main
+        git checkout ut__ci__main
         pip install .
 
     - name: Installing requirements
