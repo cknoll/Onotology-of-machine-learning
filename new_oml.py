@@ -326,6 +326,18 @@ I1022.set_relation(p.R000["is_output_to"], I1009["Loss Function"])
 I1022.set_relation(p.R000["is_output_to"], I1009["Loss Function"])
 
 
+########
+# Gradient interacts with Loss Function (I1009) to minimize it.
+I1009.set_relation(p.R000["Uses"], I1022["Gradient"])
+# Gradient is a property of Deep Learning Model (I1004) optimization.
+I1022.set_relation(p.R000["is_property_of"], I1004["Deep Learning Model"])
+# Gradient contributes to Prediction (I1032) refinement.
+I1032.set_relation(p.R000["contains"], I1022["Gradient"])
+
+
+
+
+
 # 8. 'Dropout' deactivates 'neurons''  to prevent 'overfitting', ensuring better generalization.
 #         - Dropout is part of Regularization techniques.
 #         - Neurons are input to Dropout.
@@ -337,20 +349,39 @@ I1023 = p.create_item(
      R1__has_label="Dropout",
      R2__has_description="A regularization technique that randomly deactivates neurons to reduce overfitting."
 )
+#Neuron (I1026) is part of Neural Network (I1030).
+#Neuron (I1026) has property of non-linear activation (I1013)
+
 I1024 = p.create_item(
      "I1024",
      R1__has_label="Neurons",
-     R2__has_description="Basic computational units in neural networks that process data and produce outputs."
+     R2__has_description="Basic computational units in neural networks that process data and produce outputs.",
+     R5__is_part_of=I1030["Neural Network"],
+      R16__has_property=I1013["Non-Linearity"] ,
+      R16__is_element_of=I1027["Perceprtron"]
  )
 
 I1025 = p.create_item(
      "I1025",
      R1__has_label="Overfitting",
-     R2__has_description="A condition where a model performs well on training data but poorly on unseen data."
+     R2__has_description="A condition where a model performs well on training data but poorly on unseen data.",
+     R5__is_part_of=I1007["Supervised Learning"]
  )
 I1023.set_relation(p.R5["is part of"], I1024["Neurons"])
 
 I1025.set_relation(p.R000["prevents"], I1025["Overfitting"])
+
+# Overfitting (I1023) is input of Loss Function (I1009).
+I1023.set_relation(p.R000["is_input_of"], I1009["Loss Function"])
+
+# Neuron (I1026) is input of Activation Function (I1028).
+I1026.set_relation(p.R000["is_input_of"], I1028["Activation Function"])
+
+# Neuron (I1026) is output of Weight (I1021).
+I1026.set_relation(p.R000["is_output_of"], I1021["Weight"])
+
+
+
 
 
 # with open("machine_learning.svg", "w") as f:
