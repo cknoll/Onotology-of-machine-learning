@@ -176,7 +176,8 @@ I1009 = p.create_item(
     R1__has_label="Loss Function",
     R2__has_description="A loss function is a mathematical function used to evaluate the performance of a machine learning model by quantifying the difference between the predicted output and the actual output (ground truth)."
       "The goal during training is to minimize the loss function, which helps the model improve its predictions over time. Common loss functions include Mean Squared Error (MSE) for regression tasks and Cross-Entropy Loss for classification tasks.",
-    R16__has_property=I1010["Error"]
+    R16__has_property=I1010["Error"],
+    
 )
 
 
@@ -201,6 +202,8 @@ I1010.set_relation(p.R000["is_output_to"], I1009["Loss Function"])
 I1011.set_relation(p.R000["is_input_to"], I1009["Loss Function"])
 
 
+
+
 # 5.  'Activation functions' introduce 'non-linearity' in 'deep neural networks'.
 #         - Activation functions introduce Non-linearity.
 #         - Non-linearity is property of Deep neural networks.
@@ -210,7 +213,10 @@ I1011.set_relation(p.R000["is_input_to"], I1009["Loss Function"])
 I1014 = p.create_item(
     "I1014",
     R1__has_label="Deep Neural Network",
-    R2__has_description="A deep neural network (DNN) is a type of artificial neural network with multiple hidden layers between the input and output layers. These networks are capable of learning complex representations from data by utilizing multiple layers of non-linear transformations. DNNs are used for tasks like image classification, speech recognition, and language translation, where large datasets and complex patterns are involved."
+    R2__has_description="A deep neural network (DNN) is a type of artificial neural network with multiple hidden layers between the input and output layers. These networks are capable of learning complex representations from data by utilizing multiple layers of non-linear transformations. DNNs are used for tasks like image classification, speech recognition, and language translation, where large datasets and complex patterns are involved.",
+    R3__is_subclass_of=I1030["Neural Network"],
+    R5__is_part_of=I1004["Deep Learning Model"],
+    R16__has_property=I1028["Activation Function"]
 )
 
 I1013 = p.create_item(
@@ -227,7 +233,9 @@ I1012 = p.create_item(
     R2__has_description="An activation function is a mathematical function used in neural networks to introduce non-linearity into the model"
       "It determines whether a neuron should be activated or not by calculating a weighted sum of the inputs and then passing the result through the activation function. Common activation functions include ReLU (Rectified Linear Unit), Sigmoid, and Tanh, each influencing the learning and performance of the model.",
     R4__is_instance_of=I1015["Mathematical Function"],
-    R16__has_property=I1013["Non-Linearity"]
+    R16__has_property=I1013["Non-Linearity"],
+    R5__is_part_of=I1014["Deep Neural Network"],
+    R3__is_subclass_of=I1015["Mathematical Function"]
 )
 #         - Activation functions introduce Non-linearity.[introduce->output]
 I1012.set_relation(p.R000["introduce"], I1013["Non-Linearity"])
@@ -237,6 +245,16 @@ I1013.set_relation(p.R000["is_property_of"], I1014["Deep Neural Network"])
 I1012.set_relation(p.R000["is_part_of"], I1014["Deep Neural Network"])
 #         - Non-linearity is output of Activation functions.
 I1013.set_relation(p.R000["is_part_of"], I1012["Activation Function"])
+
+# Deep Neural Network contains Perceptron (I1026).
+I1014.set_relation(p.R000["contains"], I1026["Perceptron"])
+
+# Activation Function contains ReLU (I1029).
+I1012.set_relation(p.R000["contains"], I1029["ReLU"])
+
+
+
+
 
 # 6. 'Softmax layers' produce 'probabilities' for different 'image classes'.
 #         - Softmax layers produce Probabilities.
@@ -250,7 +268,8 @@ I1016 = p.create_item(
     R1__has_label="Softmax Layer",
     R2__has_description="A Softmax layer is typically used as the final layer in a neural network for classification tasks." 
     "It converts the raw output scores of the network into probabilities by applying the Softmax function, which normalizes the scores so that they sum up to 1. Each value in the output represents the probability of a particular class, helping the model make a prediction based on the highest probability.",
-    R3__is_subclass_of=I1012["Activation Function"]
+    R3__is_subclass_of=I1012["Activation Function"],
+    R5__is_part_of=I1015["Mathematical Function"]
 )
 
 I1017 = p.create_item(
@@ -347,8 +366,11 @@ I1032.set_relation(p.R000["contains"], I1022["Gradient"])
 I1023 = p.create_item(
      "I1023",
      R1__has_label="Dropout",
-     R2__has_description="A regularization technique that randomly deactivates neurons to reduce overfitting."
+     R2__has_description="A regularization technique that randomly deactivates neurons to reduce overfitting.",
+     R5__is_part_of=I1030["Neural Network"]
 )
+# Dropout is part of Neural Network (I1030).
+#
 #Neuron (I1026) is part of Neural Network (I1030).
 #Neuron (I1026) has property of non-linear activation (I1013)
 
@@ -358,14 +380,15 @@ I1024 = p.create_item(
      R2__has_description="Basic computational units in neural networks that process data and produce outputs.",
      R5__is_part_of=I1030["Neural Network"],
       R16__has_property=I1013["Non-Linearity"] ,
-      R16__is_element_of=I1027["Perceprtron"]
+      R15__is_element_of=I1026["Perceptron"]
  )
 
 I1025 = p.create_item(
      "I1025",
      R1__has_label="Overfitting",
      R2__has_description="A condition where a model performs well on training data but poorly on unseen data.",
-     R5__is_part_of=I1007["Supervised Learning"]
+     R5__is_part_of=I1007["Supervised Learning"],
+     R15__is_element_of=I1014["Deep Neural Network"]
  )
 I1023.set_relation(p.R5["is part of"], I1024["Neurons"])
 
@@ -380,7 +403,22 @@ I1026.set_relation(p.R000["is_input_of"], I1028["Activation Function"])
 # Neuron (I1026) is output of Weight (I1021).
 I1026.set_relation(p.R000["is_output_of"], I1021["Weight"])
 
+# Dropout is input of Training Algorithm (I1019).
+I1023.set_relation(p.R000["is_input_of"], I1019["Training Algorithm"])
 
+#Dropout contains Non-Linearity (I1013).
+I1023.set_relation(p.R000["contains"], I1013["Non-Linearity"])
+
+# Activation Function is input of Neurons (I1026).
+I1012.set_relation(p.R000["is_input_of"], I1024["Neurons"])
+
+# Loss Function is input of Training Algorithm (I1019).
+I1009.set_relation(p.R000["is_input_to"], I1019["Training Algorithm"])
+# Loss Function is part of Deep Neural Network (I1014).
+
+I1009.set_relation(p.R000["is_part_of"], I1014["Deep Neural Network"])
+# Loss Function is output of Prediction (I1032).
+I1009.set_relation(p.R000["is_output_of"], I1032["Prediction"])
 
 
 
