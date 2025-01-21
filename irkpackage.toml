@@ -1,5 +1,10 @@
+main_module = "oml.py"
+main_module_prefix = "oml"
+version = "0.1.0"
+
+
+# TODO: is this necessary?
 [irkpackage]
 uri = "irk:/oml_work/1.0"
 title = "OML"
-version = "1.0"
 description = "A machine learning knowledge graph with items and relations."
